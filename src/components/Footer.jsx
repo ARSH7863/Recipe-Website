@@ -22,19 +22,22 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-center md:justify-end space-x-4">
             <a
-              href="#"
+              href="https://www.instagram.com/arsh_shkh12/"
+              target="_blank"
               className="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary-20 transition-all duration-300 hover:scale-110"
             >
               <Instagram className="h-5 w-5 text-white" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/arsh-shaikh786312/"
+              target="_blank"
               className="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary-20 transition-all duration-300 hover:scale-110"
             >
               <Linkedin className="h-5 w-5 text-white" />
             </a>
             <a
-              href="#"
+              href="https://github.com/ARSH7863"
+              target="_blank"
               className="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary-20 transition-all duration-300 hover:scale-110"
             >
               <Github className="h-5 w-5 text-white" />
