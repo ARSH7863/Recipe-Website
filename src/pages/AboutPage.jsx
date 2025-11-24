@@ -1,4 +1,58 @@
-import React from "react";
+import { Award, ChefHat, Clock, Heart, Leaf, Users } from "lucide-react";
+import Hero from "../assets/images/my_image.jpeg";
+
+const stats = [
+  { number: "10K+", label: "Happy Cooks", icon: Users },
+  { number: "500+", label: "Healthy Recipes", icon: ChefHat },
+  { number: "30 mins", label: "Average Cook Time", icon: Clock },
+  { number: "5 ★", label: "Average Rating", icon: Award },
+];
+
+const values = [
+  {
+    icon: Heart,
+    title: "Health First",
+    description:
+      "Every recipe is crafted with nutrition in mind, using whole foods and natural ingredients to fuel your body.",
+  },
+  {
+    icon: Clock,
+    title: "Time Conscious",
+    description:
+      "We understand busy lifestyles. Our recipes are designed to be quick, efficient, and perfect for real life.",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainable",
+    description:
+      "We promote sustainable cooking practices and ingredients that are good for you and the planet.",
+  },
+];
+
+const team = [
+  {
+    name: "Virat Kohli",
+    role: "Head Chef & Cricketer",
+    image:
+      "https://imgs.search.brave.com/eCDMZMR8k7AOA5J4VN13bBcbx2oPEKIpaG_f6L4I4XI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3JpY3Rv/ZGF5LmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMi8wMy9W/aXJhdC1Lb2hsaS0z/LmpwZz9zc2w9MQ",
+    bio: "15+ years creating healthy, delicious recipes",
+  },
+
+  {
+    name: "Arsh Shaikh",
+    role: "Founder of Taste Of Home",
+    image: Hero,
+    bio: "10+ years creating healthy, delicious recipes",
+  },
+
+  {
+    name: "Cristiano Ronaldo",
+    role: "Head Chef & Footballer",
+    image:
+      "https://imgs.search.brave.com/VIhpZwEoEIX7D9bT8H6waWByyoZUl4nY1IdoP6ZI4Zg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wZW9w/bGUuY29tL3RobWIv/MC1GazctRFhJQnNO/MnhUTldWZVR4Z0o5/MVpRPS80MDAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCk6Zm9jYWwoNjkx/eDI3ODo2OTN4Mjgw/KS9jcmlzdGlhbm8t/cm9uYWxkby1uZXQt/d29ydGgtc2F1ZGkt/cHJvLWxlYWd1ZS0w/ODEyMjUtMmE2MjM0/NjgwMDMwNGU2Mjg2/NjU5MjQxMGJjYTZj/ZmMuanBn",
+    bio: "20+ years creating healthy, delicious recipes",
+  },
+];
 
 const AboutPage = () => {
   return (
@@ -19,15 +73,18 @@ const AboutPage = () => {
       </section>
 
       {/* Stats Section */}
+      {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="">
-            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-              Icons
+          {stats.map((item, index) => (
+            <div key={index}>
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <item.icon className="text-white h-8 w-8" />
+              </div>
+              <h3 className="text-3xl font-bold text-primary">{item.number}</h3>
+              <p className="text-gray-950">{item.label}</p>
             </div>
-            <h3 className="text-3xl font-bold text-primary">Stats Number</h3>
-            <p className="text-gray-950">Stats Label</p>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -70,16 +127,23 @@ const AboutPage = () => {
       {/* Value Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-primary">Our Values</h2>
+          <h2 className="text-4xl font-bold text-primary my-10">Our Values</h2>
           <div className="grid grid-cols-3 gap-8">
             {/* Map method */}
-            <div className="bg-neutral-50 p-8 rounded-3xl shadow-md hover:shadow-lg transition">
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                Icon
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="bg-neutral-50 p-8 rounded-3xl shadow-md hover:shadow-lg transition"
+              >
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="text-white h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary">
+                  {value.title}
+                </h3>
+                <p className="text-gray-950">{value.description}</p>
               </div>
-              <h3 className="text-2xl font-bold text-primary">Value Title</h3>
-              <p className="text-gray-950">Value Description</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -91,16 +155,18 @@ const AboutPage = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-10">
             {/* Map method */}
-            <div className="group">
-              <img
-                src=""
-                alt=""
-                className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg mb-4 mx-auto"
-              />
-              <h3 className="text-2xl font-bold text-primary">Member Name</h3>
-              <p className="text-orange-400">Member Role</p>
-              <p className="text-gray-950">Member Bio</p>
-            </div>
+            {team.map((team) => (
+              <div className="group">
+                <img
+                  src={team.image}
+                  alt="Team member images"
+                  className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg mb-4 mx-auto"
+                />
+                <h3 className="text-2xl font-bold text-primary">{team.name}</h3>
+                <p className="text-orange-400">{team.role}</p>
+                <p className="text-gray-950">{team.bio}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -114,7 +180,7 @@ const AboutPage = () => {
           Join thousands of home cooks who have transformed their kitchens with
           our simple, healthy recipes.
         </p>
-        <button className="bg-green-700 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-orange-400 transition transform hover:scale-105 shadow-xl cursor-pointer">
+        <button className="bg-green-700 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-green-600 transition transform hover:scale-105 shadow-xl cursor-pointer">
           Browse Recipes
         </button>
       </section>
