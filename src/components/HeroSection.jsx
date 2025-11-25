@@ -1,5 +1,6 @@
 import React from "react";
 import HeroImage from "../assets/images/hero_image.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -12,9 +13,11 @@ const HeroSection = () => {
           Discover eight quick, whole food recipes that you can cook tonight -
           no processed junk, no guesswork. Simple, delicious and healthy.
         </p>
-        <button className="bg-primary text-light-neutral-0 px-10 py-5 rounded-2xl text-lg sm:text-xl font-semibold hover:bg-secondary transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
-          Start Exploring...
-        </button>
+        <Link to="/about">
+          <button className="bg-primary text-light-neutral-0 px-10 py-5 rounded-2xl text-lg sm:text-xl font-semibold hover:bg-secondary transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
+            Start Exploring...
+          </button>
+        </Link>
 
         <div className="mt-16 w-full flex justify-center">
           <img

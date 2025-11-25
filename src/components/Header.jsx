@@ -37,7 +37,7 @@ const Header = () => {
         </nav>
 
         <Link
-          to="/"
+          to="/recipes"
           className="hidden md:block bg-primary text-light-neutral-0 px-6 py-3 rounded-xl hover:bg-secondary transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
         >
           Browse Recipes

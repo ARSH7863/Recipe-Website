@@ -1,5 +1,6 @@
 import { Award, ChefHat, Clock, Heart, Leaf, Users } from "lucide-react";
 import Hero from "../assets/images/my_image.jpeg";
+import { Link } from "react-router-dom";
 
 const stats = [
   { number: "10K+", label: "Happy Cooks", icon: Users },
@@ -180,9 +181,11 @@ const AboutPage = () => {
           Join thousands of home cooks who have transformed their kitchens with
           our simple, healthy recipes.
         </p>
-        <button className="bg-green-700 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-green-600 transition transform hover:scale-105 shadow-xl cursor-pointer">
-          Browse Recipes
-        </button>
+        <Link to="/recipes">
+          <button className="bg-green-700 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-green-600 transition transform hover:scale-105 shadow-xl cursor-pointer">
+            Browse Recipes
+          </button>
+        </Link>
       </section>
     </div>
   );
