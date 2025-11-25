@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { recipeAPI, transformRecipe } from "../services/recipeAPI";
+import { recipeAPI, transformRecipe } from "../services/recipeAPI.js";
 
 export const useRecipe = () => {
   const [recipe, setRecipe] = useState([]);

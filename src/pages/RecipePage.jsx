@@ -2,7 +2,7 @@ import { RefreshCw } from "lucide-react";
 import FilterBar from "../components/FilterBar";
 import RecipeGrid from "../components/RecipeGrid";
 import RecipeModel from "../components/RecipeModel";
-import { useRecipe } from "../hooks/UseRecipe.js";
+import { useRecipe } from "../hooks/useRecipe.js";
 import { useMemo, useState } from "react";
 
 const RecipePage = () => {
