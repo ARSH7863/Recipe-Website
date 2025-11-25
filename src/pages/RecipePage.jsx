@@ -19,7 +19,6 @@ const RecipePage = () => {
     error,
     searchRecipes,
     fetchRecipeByCategory,
-    fetchRandomRecipes,
     refetch,
   } = useRecipe();
 
