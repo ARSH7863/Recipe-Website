@@ -82,6 +82,25 @@ export const recipeAPI = {
       return [];
     }
   },
+
+  // 🏷️ Get Meals by Category
+  getMealsByCategory: async (category) => {
+    const cacheKey = `meals-${category}`;
+    if (cache.has(cacheKey)) {
+      return cache.get(cacheKey);
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/filter.php?c=${category}`);
+      const data = await response.json();
+      const result = data.meals || [];
+      cache.set(cacheKey, result);
+      return result;
+    } catch (error) {
+      console.log(`Error Get Meals by Category: `, error);
+      return [];
+    }
+  },
 };
 
 // 🔄 Transform API to our format
