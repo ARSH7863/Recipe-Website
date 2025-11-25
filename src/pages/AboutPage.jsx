@@ -38,14 +38,12 @@ const team = [
       "https://imgs.search.brave.com/eCDMZMR8k7AOA5J4VN13bBcbx2oPEKIpaG_f6L4I4XI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3JpY3Rv/ZGF5LmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMi8wMy9W/aXJhdC1Lb2hsaS0z/LmpwZz9zc2w9MQ",
     bio: "15+ years creating healthy, delicious recipes",
   },
-
   {
     name: "Arsh Shaikh",
     role: "Founder of Taste Of Home",
     image: Hero,
     bio: "10+ years creating healthy, delicious recipes",
   },
-
   {
     name: "Cristiano Ronaldo",
     role: "Head Chef & Footballer",
@@ -59,22 +57,21 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-light-neutral-200">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden flex items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 lg:py-32 text-center">
+        <div className="container mx-auto px-4">
           <h1 className="text-5xl lg:text-7xl font-bold text-primary mb-6">
             My Story
           </h1>
           <p className="text-xl text-gray-950 max-w-3xl mx-auto leading-relaxed mb-8">
             I believe that healthy eating shouldn't be complicated,
             time-consuming, or boring. My mission is to make nutritious cooking
-            accesible to everyone.
+            accessible to everyone.
           </p>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      {/* Stats Section */}
+      {/* Stats */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((item, index) => (
@@ -90,8 +87,9 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 lg:py-32 lg:bg-light-neutral-100">
-        <div className="container mx-auto px-40 grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-20 lg:py-32 bg-light-neutral-100">
+        <div className="container mx-auto px-6 lg:px-20 grid lg:grid-cols-2 gap-16 items-center">
+          {/* LEFT */}
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-10">
               Why I started this journey.
@@ -100,79 +98,83 @@ const AboutPage = () => {
               <p>
                 It all began in a small kitchen where our founder, struggling to
                 balance a demanding career with healthy eating, realized that
-                most "healthy" recipes were either too complicated or simply
-                didn't taste good.
+                most “healthy” recipes were too complicated or didn’t taste
+                good.
               </p>
               <p>
                 We set out to change that. Every recipe on our platform is
                 tested in real kitchens by real people with busy lives.
               </p>
               <p>
-                Today, we're proud to help thousands of people cook healthier
-                meals without the stress - proving that good food doesn't have
-                to be complicated.
+                Today, we're proud to help thousands cook healthier meals
+                without stress — proving good food doesn’t have to be
+                complicated.
               </p>
             </div>
           </div>
 
-          {/* Fixed Image Height + Perfect Center */}
-          <div className="relative h-[450px] flex items-center justify-center">
+          {/* RIGHT IMAGE */}
+          <div className="w-full flex justify-center">
             <img
               src="https://images.pexels.com/photos/4253302/pexels-photo-4253302.jpeg?auto=compress&cs=tinysrgb&w=800"
+              className="rounded-3xl shadow-xl w-full max-w-[400px] h-[450px] object-cover"
               alt=""
-              className="rounded-3xl shadow-xl h-full w-auto object-cover"
             />
           </div>
         </div>
       </section>
-      {/* Value Section */}
+
+      {/* Values Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-primary my-10">Our Values</h2>
-          <div className="grid grid-cols-3 gap-8">
-            {/* Map method */}
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-neutral-50 p-8 rounded-3xl shadow-md hover:shadow-lg transition"
+                className="bg-neutral-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition"
               >
                 <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="text-white h-8 w-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary">
+
+                <h3 className="text-2xl font-bold text-primary mb-2">
                   {value.title}
                 </h3>
-                <p className="text-gray-950">{value.description}</p>
+                <p className="text-gray-950 leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
       {/* Team Section */}
       <section className="py-20 lg:py-32 bg-neutral-50">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-4xl font-bold text-primary mb-10">
             Meet My Team.
           </h3>
+
           <div className="grid md:grid-cols-3 gap-10">
-            {/* Map method */}
-            {team.map((team) => (
-              <div className="group">
+            {team.map((t, i) => (
+              <div key={i} className="group">
                 <img
-                  src={team.image}
-                  alt="Team member images"
+                  src={t.image}
                   className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg mb-4 mx-auto"
                 />
-                <h3 className="text-2xl font-bold text-primary">{team.name}</h3>
-                <p className="text-orange-400">{team.role}</p>
-                <p className="text-gray-950">{team.bio}</p>
+                <h3 className="text-2xl font-bold text-primary">{t.name}</h3>
+                <p className="text-orange-400">{t.role}</p>
+                <p className="text-gray-950">{t.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 bg-primary text-center">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
           Ready to start cooking?
